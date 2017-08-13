@@ -1,0 +1,11 @@
+---
+"*.{js, jsx}":
+  - "prettier --parse flow --write"
+  - "git add"
+"*.{ts,tsx}":
+  - "prettier --parser typescript --write"
+  - "git add"
+"*.css":
+  - "stylefmt"
+  - "git add"
+
