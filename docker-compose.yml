@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: web:dev
+    volumes:
+      - .:/app
+      - /node_modules/
+    expose:
+      - '3000'
+    ports:
+      - '3000:3000'
+    command:
+      - '/bin/bash'
+      - '-c'
+      - 'NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config ./webpack.config.ts --progress --colors'
+  prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: web:prod
+    command:
+      - 'bin/bash'
+      - '-c'
+      - 'NODE_ENV=production ./node_modules/.bin/webpack --config ./webpack/webpack.config.ts'
