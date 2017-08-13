@@ -1,0 +1,26 @@
+{
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "module": "commonjs", // compile 'import' in webpack configuration
+    "moduleResolution": "node",
+    "target": "es5",
+    "isolatedModules": true,
+    "lib": [
+      "dom",
+      "es6",
+      "es2015.promise"
+    ],
+    "sourceMap": true,
+    "pretty": true,
+    "jsx": "react", // enable jsx
+    "jsxFactory": "h" // use `h()` calls for JSX tags, by default it is `React.createElement()`
+  }
+}
