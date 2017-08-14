@@ -1,5 +1,5 @@
 ---
-"*.{js, jsx}":
+"*.{js, jsx},!dist/*.js":
   - "prettier --single-quote --trailing-comma es5 --parse flow --write"
   - "tslint"
   - "git add"
