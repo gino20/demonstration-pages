@@ -22,7 +22,9 @@ services:
       context: .
       dockerfile: Dockerfile
     image: web:prod
+    volumes:
+      - .:/app
     command:
-      - 'bin/bash'
+      - '/bin/bash'
       - '-c'
-      - 'NODE_ENV=production ./node_modules/.bin/webpack --config ./webpack/webpack.config.ts'
+      - 'NODE_ENV=production ./node_modules/.bin/webpack -p --config ./webpack.config.ts'
