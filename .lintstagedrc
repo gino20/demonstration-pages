@@ -1,10 +1,10 @@
 ---
 "*.{js, jsx}":
-  - "prettier --parse flow --write"
+  - "prettier --single-quote --trailing-comma es5 --parse flow --write"
   - "tslint"
   - "git add"
 "*.{ts,tsx}":
-  - "prettier --parser typescript --write"
+  - "prettier --single-quote --trailing-comma es5 --parser typescript --write"
   - "git add"
 "*.css":
   - "stylefmt"
