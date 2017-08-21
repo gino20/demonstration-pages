@@ -5,5 +5,5 @@ dev:
 	@docker-compose up dev
 
 prod:
-	@docker-compose up prod
+	@NODE_ENV=production ./node_modules/.bin/webpack -p --config ./webpack.config.ts
 
