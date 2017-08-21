@@ -2,13 +2,13 @@ FROM node
 
 MAINTAINER gino20.hong@gmail.com
 
-ENV DIST=/app
-RUN mkdir -p $DIST
+ENV DIST = /app
 
 WORKDIR $DIST
 
-ADD package.json $DIST
+COPY package.json .
+COPY yarn.lock .
 
 RUN yarn install
 
-ADD . $DIST
+COPY . .

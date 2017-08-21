@@ -5,10 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: web:dev
+    container_name: web-dev
     volumes:
       - .:/app
-      - /node_modules/
+      - /app/node_modules/
     expose:
       - '3000'
     ports:
