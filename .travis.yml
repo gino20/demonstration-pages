@@ -12,7 +12,7 @@ install:
   - yarn install
 
 before_script:
-  - git clone --branch gh-pages https://${GH_REF} dist
+  - git clone --branch gh-pages https://git@${GH_REF} dist
 
 script:
   - npm test
