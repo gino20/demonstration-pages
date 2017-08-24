@@ -12,7 +12,7 @@ install:
   - yarn install
 
 before_script:
-  - git clone --branch gh-pages git@${GH_REF} dist
+  - git clone --branch gh-pages https://${GH_REF} dist
 
 script:
   - make build
@@ -25,4 +25,4 @@ after_success:
 
 env:
   global:
-    - GH_REF: github.com:gino20/demonstration-pages.git
+    - GH_REF: github.com/gino20/demonstration-pages.git
