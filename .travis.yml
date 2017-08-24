@@ -15,7 +15,7 @@ before_script:
   - git clone --branch gh-pages https://${GH_REF} dist
 
 script:
-  - make build
+  - make prod
 
 after_success:
   - cd dist
