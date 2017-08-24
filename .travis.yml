@@ -1,0 +1,29 @@
+language: node_js
+
+sudo: false
+
+node_js: stable
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - yarn install
+
+before_script:
+  - git clone --branch gh-pages https://${GH_REF} dist
+
+script:
+  - npm test
+
+after_success:
+  - make build
+  - cd dist
+  - git add --all .
+  - git commit --message "Automatically update from travis-ci"
+  - git push --quiet --force  "https://${GH_TOKEN}@${GH_REF}" gh-pages:gh-pages
+
+env:
+  global:
+    - GH_REF: github.com:gino20/demonstration-pages.git
